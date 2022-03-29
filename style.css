@@ -1,0 +1,460 @@
+/*---import google font---*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*---set default padding and margin to 0---*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*---styling to body tag---*/
+body {
+    font-weight: 300;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.05rem;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+/*---styling for nav bar---*/
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* margin-top: rem; */
+    background: linear-gradient(to right, #11998e, #38ef7d);
+}
+
+.nav h3 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-left: -10rem;
+    color: whitesmoke
+}
+
+.nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    width: 170px;
+    background-color: #11998e;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 6px;
+    padding-bottom: 2px;
+    color: #fff;
+}
+
+/*---common styling for button---*/
+.btn {
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+
+/*---set opacity of text for all page---*/
+.text {
+    opacity: 0.8;
+}
+
+/*---set the title---*/
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*set the whole container height and background color*/
+.container {
+    min-height: 100vh;
+    background: transparent;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+/*---styling for the heading and search section of page---*/
+.heading-search-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    /* background: #fff; */
+    text-align: center;
+}
+
+/*---search section starts here---*/
+.meal-search {
+    margin: 2rem 0;
+}
+
+.search-container {
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.search,
+.search-btn {
+    width: 100%;
+}
+
+.search {
+    padding: 0 2.5rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid #d65108;
+    color: #d65108;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.search:placeholder {
+    color: #d65108
+}
+
+.search-btn {
+    width: 205px;
+    height: 55px;
+    font-size: 1.5rem;
+    background: #d65108;
+    color: #fff;
+    border: none;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    padding-left: 2px;
+    margin-left: 1px;
+}
+
+.search-btn:hover {
+    background: #b54507;
+}
+
+.search-result {
+    margin-top: 4rem;
+}
+/*---search section ends here*/
+
+
+#recipe,
+#fav-meals {
+    height: 70%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    margin-left: 5%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.recipe-item {
+    position: relative;
+    border-radius: 10px;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+    /* width: 20%; */
+    height: auto;
+    width: auto;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79); 
+    margin: 30px;
+    background-color: #11998e;
+}
+
+.recipe-img {
+    position: relative;
+}
+
+.recipe-img img {
+    height: 300px;
+    width: 100%;
+    margin: auto;
+    object-fit:cover;
+    /* position: absolute; */
+    
+    /* display: block; */
+}
+
+.recipe-details {
+    padding: 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    object-fit: contain;
+    justify-content: flex-start;
+    margin-left: 0;
+    align-items: center;
+    
+
+    /* text-align: start; */
+}
+
+.recipe-name {
+    text-align: left;
+    margin-left: 10px;
+    margin-top: -12px;
+    color: rgb(75, 52, 52);
+    height: 100px;
+    font-size: 0.8rem;
+}
+
+.recipe-name h3 {
+    font-size: 1.3rem;
+    margin: 5% 0;
+}
+
+/*---seperate favourite page styling starts here---*/
+.unfavourite-btn{
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 1.08rem;
+    color: white;
+    width: 220px;
+    margin-top: 1px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color:#C25E5E;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: whitesmoke ;
+    font-size: 2rem;
+    font-family: monospace;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.navbar h2 {
+    margin: 20px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    margin-right: 5rem;
+    background-color: blueviolet;
+}
+
+.favourite-button {
+    margin: 1%;
+    font-size: 1.20rem;
+    width: 200px;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.733);
+    cursor: pointer;
+    background-color: #5E6FC2;
+}
+
+.recipe-details h3 {
+    text-overflow: inherit;
+}
+
+.recipe h3 {
+    font-size: 1.4rem;
+}
+/*seperate favourite page css ends here*/
+
+/*---common styling for home and favourite page---*/
+/*stling for the popup dialouge box of get recipe*/
+.recipe-btn {
+    text-decoration: none;
+    color: #fff;
+    background: #d65108;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-left: 22%;
+    /* padding: 0.75rem, 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    /* margin: ; */
+    border-radius: 2rem;
+    transition: all 0.4s linear;
+}
+
+.recipe-btn:hover {
+    background: #b54507;
+}
+
+#meal-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+    background-color: rgb(33, 37, 41);
+    padding: 20px;
+}
+
+.show-recipe {
+    /* important used here to display the details page */
+    display: block !important;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+.recipe-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.back-button {
+    background-color: rgba(132, 0, 255, 0.596);
+    border-radius: 6px;
+    border: none;
+    text-align: center; 
+    align-items: center
+}
+
+.back-button i{
+    font-size: 25px;
+    margin: 10px;
+    cursor: pointer;
+    /* background-color: grey
+    ; */
+    color: #fff;
+    
+}
+
+.meal-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 2rem
+}
+
+.meal-card-img-container img{
+    width: 350px;
+    height: 350px;
+    /* margin: 2rem; */
+    margin-top: 10px;
+    border-radius: 2rem;
+    margin-bottom: 20px;
+}
+
+.meal-name p {
+    font-size: 1.50rem;
+    font-weight: 400;
+}
+
+.right {
+    text-align: left;
+    max-width: 800px;
+}
+
+.right div p {
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+.right div ul {
+    margin-left: 45px;
+}
+
+/*get recipe css ends here*/
+
+
+
+/*media query for responsive design*/
+@media screen and (max-width: 800px) {
+    .search-container {
+        width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search::placeholder {
+        font-size: 18px;
+    }
+
+    .search-btn {
+        font-size: 18px;
+    }
+
+    #meal-details-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 0;
+        overflow: scroll;
+        position: absolute;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 50px;
+        overflow: hidden;
+    }
+
+    .recipe-btn {
+        margin: auto;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    #recipe,
+    #fav-meals {
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        gap: 2rem;
+    }
+
+    .recipe-item {
+        margin: 0;
+    }
+
+    .recipe-details {
+        width: 500px;
+    }
+
+    /* #meal-details-container {
+        width: 500px;
+    } */
+
+    
+}
+
+@media screen and (min-width: 992px) {
+    #recipe,
+    #fav-meals {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

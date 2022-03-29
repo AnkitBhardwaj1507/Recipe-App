@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fontawesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!--linking css file to fav.html-->
+    <link rel="stylesheet" href= "style.css">
+    <!--Use intenal css for giving background color to page-->
+    <style>
+        body {
+          background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        }
+    </style>
+    <!--title of the page-->
+    <title>Favourite</title>
+</head>
+<body>
+    <!--container for the title and heading of favourite page-->
+    <div class="container">
+    <nav class="navbar">
+        <a href="./index.html" class="back-to-home">FOODIFY</a>  
+        <h2>Favourite Meals</h2>
+    </nav>
+    
+    <!--Container for meals added to favourite list-->
+    <div class="fav-meals-container">
+        
+        <div id="fav-meals">
+        <!--<div class="recipe-item">
+                <div class="recipe-img">
+                        <img src="https://unsplash.it/100/100">
+                </div>
+                <div class="recipe-name">
+                    <h3>recipe name</h3>
+                    <a href= "#" class= "recipe-btn">Get Recipe</a>
+                 </div>
+            </div>
+                <i class="fa-solid fa-x"></i>
+        -->
+        </div>
+    </div>
+
+    <!--Container for showing recipe details popup-->
+    <div id="meal-details">
+        <button class="back-button">
+            <i class="fas fa-arrow-circle-left">&nbsp; Home</i>
+        </button>
+
+        <div id="meal-details-container">
+
+        </div>
+    </div>
+</div>
+
+    <!--linking script file for favourite page-->
+    <script src="fav_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodify</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!--link css file-->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div class = "container">
+        <!--container for logo and fav div-->
+        <div class="nav">
+            <h3>Foodify</h3>
+            <a href="/fav.html" id="favorite-meals-link"
+            >Favourite Meals</a
+            >
+        </div>
+        
+        <!--container for heading and search section-->
+        <div class="heading-search-section">
+            <div class="meal-search">
+                <h2 class="title">Find Your Favourite Food</h2>
+
+                <div class="search-container">
+                    <input type="text" class="search" placeholder="Search your meal now..." id="search-input">
+                    <button class="search-btn btn" type="submit" id="search-button">
+                        Search Now
+                    </button>
+                </div>
+            </div>
+
+            <!--containet to show the search recipe result-->
+            <div class="search-result">
+                <h2 class="title">Your Search Result: </h2>
+                <div id="recipe">
+                <!-- <div class="recipe-item">
+                        <div class="recipe-img">
+                            <img src="./images/images1.jpg" alt="burger-image">
+                        </div>
+                        <div class="recipe-name">
+                            <h3>Burger</h3>
+                            <a href="#" class="recipe-btn">Get Recipe</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!--container for back to home button and recipe details popup-->
+        <div id="meal-details">
+            <button class="back-button">
+                <i class="fas fa-arrow-circle-left">&nbsp; Home</i>
+            </button>
+
+            <div id="meal-details-container">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--connect script file-->
+    <script src="script1.js"></script>
+</body>
+</html>
