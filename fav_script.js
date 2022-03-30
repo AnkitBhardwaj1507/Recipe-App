@@ -1,13 +1,16 @@
+//select the DOM
 const favouriteMeal = document.getElementById("fav-meals");
 
 const mealDetailsContainer = document.getElementById('meal-details-container');
 const backButton = document.getElementsByClassName("back-button")[0];
 
+//add event listener
 document.addEventListener('DOMContentLoaded', getFavouriteMeals);
 backButton.addEventListener('click', closeRecipePopup);
 favouriteMeal.addEventListener('click', removeFromFavourites);
 favouriteMeal.addEventListener('click', getRecipeinfo)
 
+//function to fetch and display the favourite meals
 function getFavouriteMeals () {
     let favouriteMealsId;
 
@@ -28,6 +31,7 @@ function getFavouriteMeals () {
     });
 }
 
+//function to add favourite meals to container
 function addFavouriteMeals (meal, info) {
     info = `
         <div class= "recipe-item" id="${meal.idMeal}">
@@ -44,23 +48,29 @@ function addFavouriteMeals (meal, info) {
     favouriteMeal.innerHTML += info;
 }
 
+//to remove meal from favourite
 function removeFromFavourites(e) {
     if(!e.target.classList.contains('unfavourite-btn')) {
         return;
     }
 
+    //if unfavourite button is clicked get id of parent
     let favouriteMeal = e.target.parentElement;
     let mealId = favouriteMeal.id;
     let favouriteMealsId = JSON.parse(localStorage.getItem("favourites"));
 
+    //find the id of meal which is clicked
     let idx = favouriteMealsId.indexOf(mealId);
 
+    //remove that meal id from the array in local storage
     favouriteMealsId.splice(idx, 1);
     localStorage.setItem("favourites", JSON.stringify(favouriteMealsId));
 
+    //remove the meal from the local storage
     favouriteMeal.remove();
 }
 
+//function to show the popup dialoug box
 function getRecipeinfo(e) {
     if(e.target.classList.contains("recipe-btn")) {
         let recipeItem = e.target.parentElement.parentElement;
@@ -115,6 +125,7 @@ function addRecipeinfo(meal) {
     mealDetailsContainer.style.display = 'flex';
 }
 
+//function to close the popup
 function closeRecipePopup() {
     mealDetailsContainer.parentElement.classList.remove('show-recipe');
 }
