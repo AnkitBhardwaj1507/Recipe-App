@@ -1,4 +1,4 @@
-
+//select the Dom element
 const searchInputTxt = document.getElementById('search-input')
 const searchBtn = document.getElementById('search-button');
 const recipeList = document.getElementById('recipe');
@@ -12,14 +12,16 @@ backButton.addEventListener('click', closeRecipePopup);
 recipeList.addEventListener('click', getRecipeinfo);
 recipeList.addEventListener('click',addToFavourites);
 
-
+//function to fetch the meal from api using search input tag//function to fetch the meal from api using search input tag
 function searchRecipe() {
     let inputTxt = searchInputTxt.value;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputTxt}`)
+         //convert response to json
         .then(response => response.json())
         .then(data => {
             let html ="";
             if(data.meals){
+                //loop over every meal and add it to the list
                 data.meals.forEach(meal => {
                     html += `
                         <div class='recipe-item' id = "${meal.idMeal}">
@@ -37,15 +39,17 @@ function searchRecipe() {
             });
             recipeList.classList.remove('notFound');
         }else {
+            //show text if no meal is found
             html = "Sorry, We Didn't Find Any Meal";
             recipeList.classList.add('notFound');
         }
-
+        //append all meals to the div
         recipeList.innerHTML = html;
       });
 
 }
 
+//To display recipe details
 function getRecipeinfo(e) {
     if(e.target.classList.contains("recipe-btn")) {
         let recipeItem = e.target.parentElement.parentElement;
@@ -100,10 +104,12 @@ function addRecipeinfo(meal) {
     mealDetailsContainer.style.display = 'flex';
 }
 
+//function to close the popup of recipe details
 function closeRecipePopup() {
     mealDetailsContainer.parentElement.classList.remove('show-recipe');
 }
 
+//add meals to favourite
 function addToFavourites(e) {
     if(!e.target.classList.contains("favourite-button")) {
         return;
@@ -118,10 +124,12 @@ function addToFavourites(e) {
         favouriteMeals = JSON.parse(localStorage.getItem("favourites"));
     }
 
+     //check if mealId is already in array
     if(favouriteMeals.indexOf(mealId) !== -1) {
         return;
     }
 
+    //add id to array and save it in local storage
     favouriteMeals.push(mealId);
     localStorage.setItem('favourites', JSON.stringify(favouriteMeals));
 
